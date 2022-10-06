@@ -9,6 +9,6 @@
 public sealed class GameEventSystems : Feature {
 
     public GameEventSystems(Contexts contexts) {
-        Add(new ComponentsDestroyFlagEventSystem(contexts)); // priority: 0
+        Add(new ComponentsFlagsDestroyEventSystem(contexts)); // priority: 0
     }
 }

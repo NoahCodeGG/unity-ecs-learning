@@ -5,20 +5,20 @@ namespace Hybrid
     /// <summary>
     ///     IView 实现
     /// </summary>
-    public class View : MonoBehaviour, IView, IComponentsDestroyFlagListener
+    public class View : MonoBehaviour, IView, IComponentsFlagsDestroyListener
     {
-        /// <summary>
-        ///     存在 destroy flag 处理
-        /// </summary>
-        /// <param name="entity">entity</param>
-        public void OnComponentsDestroyFlag(GameEntity entity)
+        protected GameEntity SelfEntity => gameObject.GetEntityLink().entity as GameEntity;
+        
+        protected virtual void OnDestroyEntityHandler()
         {
-            // 解除关联
-            gameObject.Unlink();
 
-            OnDestroyEntityHandler();
         }
+        
+        protected virtual void OnLinkEntityHandler()
+        {
 
+        }
+        
         /// <summary>
         ///     关联
         /// </summary>
@@ -30,16 +30,25 @@ namespace Hybrid
             gameObject.Link(entity);
 
             // 添加 destroy flag
-            entity.AddComponentsDestroyFlagListener(this);
+            entity.AddComponentsFlagsDestroyListener(this);
 
             // 更新物体位置与旋转
             transform.position = entity.componentsPosition.Value;
             transform.rotation = Quaternion.Euler(0f, 0f, entity.componentsRotation.Angel);
+            
+            OnLinkEntityHandler();
         }
 
-        protected virtual void OnDestroyEntityHandler()
+        /// <summary>
+        ///     存在 destroy flag 处理
+        /// </summary>
+        /// <param name="entity">entity</param>
+        public void OnComponentsFlagsDestroy(GameEntity entity)
         {
+            // 解除关联
+            gameObject.Unlink();
 
+            OnDestroyEntityHandler();
         }
     }
 }
