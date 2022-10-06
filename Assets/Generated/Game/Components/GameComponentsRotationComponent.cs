@@ -8,19 +8,19 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Components.RotationComponent componentsRotation { get { return (Components.RotationComponent)GetComponent(GameComponentsLookup.ComponentsRotation); } }
+    public Components.Rotation componentsRotation { get { return (Components.Rotation)GetComponent(GameComponentsLookup.ComponentsRotation); } }
     public bool hasComponentsRotation { get { return HasComponent(GameComponentsLookup.ComponentsRotation); } }
 
     public void AddComponentsRotation(float newAngel) {
         var index = GameComponentsLookup.ComponentsRotation;
-        var component = (Components.RotationComponent)CreateComponent(index, typeof(Components.RotationComponent));
+        var component = (Components.Rotation)CreateComponent(index, typeof(Components.Rotation));
         component.Angel = newAngel;
         AddComponent(index, component);
     }
 
     public void ReplaceComponentsRotation(float newAngel) {
         var index = GameComponentsLookup.ComponentsRotation;
-        var component = (Components.RotationComponent)CreateComponent(index, typeof(Components.RotationComponent));
+        var component = (Components.Rotation)CreateComponent(index, typeof(Components.Rotation));
         component.Angel = newAngel;
         ReplaceComponent(index, component);
     }

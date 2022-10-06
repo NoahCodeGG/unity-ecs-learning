@@ -8,42 +8,57 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int ComponentsCreateGameObjectCmd = 0;
-    public const int ComponentsDestroyFlag = 1;
-    public const int ComponentsFireCmd = 2;
-    public const int ComponentsLifetime = 3;
-    public const int ComponentsPlayerTag = 4;
+    public const int ComponentsCmdCreateGameObject = 0;
+    public const int ComponentsCmdFire = 1;
+    public const int ComponentsFlagsDestroy = 2;
+    public const int ComponentsId = 3;
+    public const int ComponentsLifetime = 4;
     public const int ComponentsPosition = 5;
     public const int ComponentsRotation = 6;
-    public const int ComponentsVelocity = 7;
-    public const int ComponentsView = 8;
-    public const int ComponentsDestroyFlagListener = 9;
+    public const int ComponentsTagsBullet = 7;
+    public const int ComponentsTagsEnemy = 8;
+    public const int ComponentsTagsPhysicsTag = 9;
+    public const int ComponentsTagsPlayer = 10;
+    public const int ComponentsTarget = 11;
+    public const int ComponentsVelocity = 12;
+    public const int ComponentsView = 13;
+    public const int ComponentsFlagsDestroyListener = 14;
 
-    public const int TotalComponents = 10;
+    public const int TotalComponents = 15;
 
     public static readonly string[] componentNames = {
-        "ComponentsCreateGameObjectCmd",
-        "ComponentsDestroyFlag",
-        "ComponentsFireCmd",
+        "ComponentsCmdCreateGameObject",
+        "ComponentsCmdFire",
+        "ComponentsFlagsDestroy",
+        "ComponentsId",
         "ComponentsLifetime",
-        "ComponentsPlayerTag",
         "ComponentsPosition",
         "ComponentsRotation",
+        "ComponentsTagsBullet",
+        "ComponentsTagsEnemy",
+        "ComponentsTagsPhysicsTag",
+        "ComponentsTagsPlayer",
+        "ComponentsTarget",
         "ComponentsVelocity",
         "ComponentsView",
-        "ComponentsDestroyFlagListener"
+        "ComponentsFlagsDestroyListener"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Components.CreateGameObjectCmd),
-        typeof(Components.DestroyFlag),
-        typeof(Components.FireCmd),
-        typeof(Components.LifetimeComponent),
-        typeof(Components.PlayerTag),
-        typeof(Components.PositionComponent),
-        typeof(Components.RotationComponent),
-        typeof(Components.VelocityComponent),
-        typeof(Components.ViewComponent),
-        typeof(ComponentsDestroyFlagListenerComponent)
+        typeof(Components.Cmd.CreateGameObject),
+        typeof(Components.Cmd.Fire),
+        typeof(Components.Flags.Destroy),
+        typeof(Components.Id),
+        typeof(Components.Lifetime),
+        typeof(Components.Position),
+        typeof(Components.Rotation),
+        typeof(Components.Tags.Bullet),
+        typeof(Components.Tags.Enemy),
+        typeof(Components.Tags.PhysicsTag),
+        typeof(Components.Tags.Player),
+        typeof(Components.Target),
+        typeof(Components.Velocity),
+        typeof(Components.View),
+        typeof(ComponentsFlagsDestroyListenerComponent)
     };
 }

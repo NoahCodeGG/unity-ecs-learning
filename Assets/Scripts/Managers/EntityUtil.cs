@@ -22,11 +22,12 @@ namespace Managers
         )
         {
             var playerEntity = contexts.game.CreateEntity();
-            playerEntity.isComponentsPlayerTag = true;
+            playerEntity.isComponentsTagsPlayer = true;
+            playerEntity.isComponentsTagsPhysicsTag = true;
             playerEntity.AddComponentsPosition(position);
             playerEntity.AddComponentsVelocity(velocity);
             playerEntity.AddComponentsRotation(angel);
-            playerEntity.AddComponentsCreateGameObjectCmd("Player");
+            playerEntity.AddComponentsCmdCreateGameObject("Player");
             return playerEntity;
         }
 
@@ -46,11 +47,38 @@ namespace Managers
         )
         {
             var bulletEntity = contexts.game.CreateEntity();
+            bulletEntity.isComponentsTagsBullet = true;
+            bulletEntity.isComponentsTagsPhysicsTag = true;
             bulletEntity.AddComponentsPosition(position);
             bulletEntity.AddComponentsVelocity(velocity);
             bulletEntity.AddComponentsRotation(angel);
-            bulletEntity.AddComponentsCreateGameObjectCmd("Bullet");
+            bulletEntity.AddComponentsCmdCreateGameObject("Bullet");
             return bulletEntity;
+        }
+        
+        /// <summary>
+        ///     创建 Enemy Entity
+        /// </summary>
+        /// <param name="contexts">上下文</param>
+        /// <param name="position">位置</param>
+        /// <param name="velocity">速度</param>
+        /// <param name="angel">旋转角度</param>
+        /// <returns>Player GameEntity</returns>
+        public static GameEntity CreateEnemyEntity(
+            Contexts contexts,
+            Vector2 position,
+            Vector2 velocity,
+            float angel = 0f
+        )
+        {
+            var enemyEntity = contexts.game.CreateEntity();
+            enemyEntity.isComponentsTagsEnemy = true;
+            enemyEntity.isComponentsTagsPhysicsTag = true;
+            enemyEntity.AddComponentsPosition(position);
+            enemyEntity.AddComponentsVelocity(velocity);
+            enemyEntity.AddComponentsRotation(angel);
+            enemyEntity.AddComponentsCmdCreateGameObject("Entity");
+            return enemyEntity;
         }
     }
 }

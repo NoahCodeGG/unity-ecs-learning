@@ -9,13 +9,15 @@ namespace Managers
     {
         public static PoolManager Instance;
 
-        public ViewPrefabPool bulletPrefabPool;
+        [SerializeField]public ViewPrefabPool bulletPrefabPool;
 
         private void Awake()
         {
             if (Instance != null) Destroy(Instance.gameObject);
 
             Instance = this;
+            
+            bulletPrefabPool.Preload(5);
         }
     }
 }

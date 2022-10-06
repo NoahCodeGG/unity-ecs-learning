@@ -8,12 +8,12 @@
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    public Components.InputComponent componentsInput { get { return (Components.InputComponent)GetComponent(InputComponentsLookup.ComponentsInput); } }
+    public Components.Input componentsInput { get { return (Components.Input)GetComponent(InputComponentsLookup.ComponentsInput); } }
     public bool hasComponentsInput { get { return HasComponent(InputComponentsLookup.ComponentsInput); } }
 
     public void AddComponentsInput(UnityEngine.Vector2 newDirection, bool newFire, UnityEngine.Vector2 newMousePosition) {
         var index = InputComponentsLookup.ComponentsInput;
-        var component = (Components.InputComponent)CreateComponent(index, typeof(Components.InputComponent));
+        var component = (Components.Input)CreateComponent(index, typeof(Components.Input));
         component.Direction = newDirection;
         component.Fire = newFire;
         component.MousePosition = newMousePosition;
@@ -22,7 +22,7 @@ public partial class InputEntity {
 
     public void ReplaceComponentsInput(UnityEngine.Vector2 newDirection, bool newFire, UnityEngine.Vector2 newMousePosition) {
         var index = InputComponentsLookup.ComponentsInput;
-        var component = (Components.InputComponent)CreateComponent(index, typeof(Components.InputComponent));
+        var component = (Components.Input)CreateComponent(index, typeof(Components.Input));
         component.Direction = newDirection;
         component.Fire = newFire;
         component.MousePosition = newMousePosition;

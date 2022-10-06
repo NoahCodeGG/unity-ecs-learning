@@ -8,19 +8,19 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Components.LifetimeComponent componentsLifetime { get { return (Components.LifetimeComponent)GetComponent(GameComponentsLookup.ComponentsLifetime); } }
+    public Components.Lifetime componentsLifetime { get { return (Components.Lifetime)GetComponent(GameComponentsLookup.ComponentsLifetime); } }
     public bool hasComponentsLifetime { get { return HasComponent(GameComponentsLookup.ComponentsLifetime); } }
 
     public void AddComponentsLifetime(float newTime) {
         var index = GameComponentsLookup.ComponentsLifetime;
-        var component = (Components.LifetimeComponent)CreateComponent(index, typeof(Components.LifetimeComponent));
+        var component = (Components.Lifetime)CreateComponent(index, typeof(Components.Lifetime));
         component.Time = newTime;
         AddComponent(index, component);
     }
 
     public void ReplaceComponentsLifetime(float newTime) {
         var index = GameComponentsLookup.ComponentsLifetime;
-        var component = (Components.LifetimeComponent)CreateComponent(index, typeof(Components.LifetimeComponent));
+        var component = (Components.Lifetime)CreateComponent(index, typeof(Components.Lifetime));
         component.Time = newTime;
         ReplaceComponent(index, component);
     }
