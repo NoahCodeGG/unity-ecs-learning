@@ -6,7 +6,6 @@ namespace Utils
 {
     public class PrefabPool
     {
-
         protected readonly Stack<GameObject> _inPoolObjects = new();
         protected readonly HashSet<GameObject> _outPoolObjects = new();
         public Transform PoolRoot;

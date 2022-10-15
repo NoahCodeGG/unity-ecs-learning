@@ -1,4 +1,3 @@
-using System.Net.NetworkInformation;
 using Entitas;
 using Other;
 namespace Systems
@@ -27,9 +26,10 @@ namespace Systems
                 var selfPosition = gameEntity.componentsPosition.Value;
 
                 var dirVector = (targetObjPosition - selfPosition).normalized;
-                
+
+                // TODO 修改敌人追踪主角速度
                 gameEntity.ReplaceComponentsRotation(dirVector.Vector2D2Angle());
-                gameEntity.ReplaceComponentsVelocity(dirVector * 5);
+                gameEntity.ReplaceComponentsVelocity(dirVector*5);
             }
         }
     }

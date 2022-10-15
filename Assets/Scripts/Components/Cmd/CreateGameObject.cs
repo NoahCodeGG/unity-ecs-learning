@@ -1,4 +1,5 @@
 using Entitas;
+using Other;
 namespace Components.Cmd
 {
     /// <summary>
@@ -7,8 +8,8 @@ namespace Components.Cmd
     public sealed class CreateGameObject : IComponent
     {
         /// <summary>
-        ///     物体路径（./Resources/xxx）
+        ///     物体标签
         /// </summary>
-        public string Path;
+        public ActorTag Tag;
     }
 }

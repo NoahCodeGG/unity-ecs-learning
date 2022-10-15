@@ -1,4 +1,6 @@
 using Entitas.Unity;
+using Managers;
+using Other;
 using UnityEngine;
 namespace Hybrid
 {
@@ -49,6 +51,28 @@ namespace Hybrid
             gameObject.Unlink();
 
             OnDestroyEntityHandler();
+        }
+        
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            var selfEntity = SelfEntity;
+
+            if (col.gameObject.GetEntityLink().entity is GameEntity otherEntity)
+                GameManager.Contexts.physics.componentsPhysics.CollisionInfos.Add(new CollisionInfo {
+                    sourceId = selfEntity.componentsId.Value,
+                    otherId = otherEntity.componentsId.Value
+                });
+        }
+        
+        private void OnCollisionEnter2D(Collision2D col)
+        {
+            var selfEntity = SelfEntity;
+
+            if (col.gameObject.GetEntityLink().entity is GameEntity otherEntity)
+                GameManager.Contexts.physics.componentsPhysics.CollisionInfos.Add(new CollisionInfo {
+                    sourceId = selfEntity.componentsId.Value,
+                    otherId = otherEntity.componentsId.Value
+                });
         }
     }
 }

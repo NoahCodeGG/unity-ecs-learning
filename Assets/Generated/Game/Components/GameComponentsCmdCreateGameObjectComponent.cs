@@ -11,17 +11,17 @@ public partial class GameEntity {
     public Components.Cmd.CreateGameObject componentsCmdCreateGameObject { get { return (Components.Cmd.CreateGameObject)GetComponent(GameComponentsLookup.ComponentsCmdCreateGameObject); } }
     public bool hasComponentsCmdCreateGameObject { get { return HasComponent(GameComponentsLookup.ComponentsCmdCreateGameObject); } }
 
-    public void AddComponentsCmdCreateGameObject(string newPath) {
+    public void AddComponentsCmdCreateGameObject(Other.ActorTag newTag) {
         var index = GameComponentsLookup.ComponentsCmdCreateGameObject;
         var component = (Components.Cmd.CreateGameObject)CreateComponent(index, typeof(Components.Cmd.CreateGameObject));
-        component.Path = newPath;
+        component.Tag = newTag;
         AddComponent(index, component);
     }
 
-    public void ReplaceComponentsCmdCreateGameObject(string newPath) {
+    public void ReplaceComponentsCmdCreateGameObject(Other.ActorTag newTag) {
         var index = GameComponentsLookup.ComponentsCmdCreateGameObject;
         var component = (Components.Cmd.CreateGameObject)CreateComponent(index, typeof(Components.Cmd.CreateGameObject));
-        component.Path = newPath;
+        component.Tag = newTag;
         ReplaceComponent(index, component);
     }
 
