@@ -20,6 +20,9 @@ namespace Managers
             // 玩家输入处理
             Add(new PlayerInputProcess(contexts));
 
+            // CD
+            Add(new UpdateTimerSystem(contexts));
+
             // 跟随目标
             Add(new FollowTarget(contexts));
 
@@ -34,10 +37,10 @@ namespace Managers
 
             // 同步位置
             Add(new SyncPosition(contexts));
-            
+
             // 物理
             Add(new Physics(contexts));
-            
+
             // 事件
             Add(new GameEventSystems(contexts));
 

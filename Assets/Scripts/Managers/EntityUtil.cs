@@ -1,3 +1,4 @@
+using Other;
 using UnityEngine;
 namespace Managers
 {
@@ -27,7 +28,8 @@ namespace Managers
             playerEntity.AddComponentsPosition(position);
             playerEntity.AddComponentsVelocity(velocity);
             playerEntity.AddComponentsRotation(angel);
-            playerEntity.AddComponentsCmdCreateGameObject("Player");
+            playerEntity.AddComponentsCmdCreateGameObject(ActorTag.Player);
+            playerEntity.AddComponentsTimer(0f);
             return playerEntity;
         }
 
@@ -52,10 +54,10 @@ namespace Managers
             bulletEntity.AddComponentsPosition(position);
             bulletEntity.AddComponentsVelocity(velocity);
             bulletEntity.AddComponentsRotation(angel);
-            bulletEntity.AddComponentsCmdCreateGameObject("Bullet");
+            bulletEntity.AddComponentsCmdCreateGameObject(ActorTag.Bullet);
             return bulletEntity;
         }
-        
+
         /// <summary>
         ///     创建 Enemy Entity
         /// </summary>
@@ -77,7 +79,7 @@ namespace Managers
             enemyEntity.AddComponentsPosition(position);
             enemyEntity.AddComponentsVelocity(velocity);
             enemyEntity.AddComponentsRotation(angel);
-            enemyEntity.AddComponentsCmdCreateGameObject("Entity");
+            enemyEntity.AddComponentsCmdCreateGameObject(ActorTag.Enemy);
             return enemyEntity;
         }
     }

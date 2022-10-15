@@ -34,17 +34,6 @@ namespace Hybrid
             // 销毁
             Destroy(gameObject);
         }
-        
-        private void OnCollisionEnter2D(Collision2D col)
-        {
-            var selfEntity = SelfEntity;
-
-            if (col.gameObject.GetEntityLink().entity is GameEntity otherEntity)
-                GameManager.Contexts.physics.componentsPhysics.CollisionInfos.Add(new CollisionInfo {
-                    sourceId = selfEntity.componentsId.Value,
-                    otherId = otherEntity.componentsId.Value
-                });
-        }
 
         protected override void OnLinkEntityHandler()
         {

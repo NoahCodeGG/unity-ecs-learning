@@ -31,7 +31,7 @@ namespace Systems
         {
             var playerEntity = _playerGroup.GetSingleEntity();
             foreach (var inputEntity in entities) {
-                // 移动
+                // TODO 玩家移动速度
                 var inputEntityComponentsInput = inputEntity.componentsInput;
                 playerEntity.ReplaceComponentsVelocity(new Vector2(
                     inputEntityComponentsInput.Direction.x*10,

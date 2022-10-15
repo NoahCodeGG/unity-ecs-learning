@@ -20,11 +20,12 @@ public static class GameComponentsLookup {
     public const int ComponentsTagsPhysicsTag = 9;
     public const int ComponentsTagsPlayer = 10;
     public const int ComponentsTarget = 11;
-    public const int ComponentsVelocity = 12;
-    public const int ComponentsView = 13;
-    public const int ComponentsFlagsDestroyListener = 14;
+    public const int ComponentsTimer = 12;
+    public const int ComponentsVelocity = 13;
+    public const int ComponentsView = 14;
+    public const int ComponentsFlagsDestroyListener = 15;
 
-    public const int TotalComponents = 15;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
         "ComponentsCmdCreateGameObject",
@@ -39,6 +40,7 @@ public static class GameComponentsLookup {
         "ComponentsTagsPhysicsTag",
         "ComponentsTagsPlayer",
         "ComponentsTarget",
+        "ComponentsTimer",
         "ComponentsVelocity",
         "ComponentsView",
         "ComponentsFlagsDestroyListener"
@@ -57,6 +59,7 @@ public static class GameComponentsLookup {
         typeof(Components.Tags.PhysicsTag),
         typeof(Components.Tags.Player),
         typeof(Components.Target),
+        typeof(Components.Timer),
         typeof(Components.Velocity),
         typeof(Components.View),
         typeof(ComponentsFlagsDestroyListenerComponent)
